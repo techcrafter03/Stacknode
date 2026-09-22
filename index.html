@@ -74,6 +74,8 @@
             font-size: 0.9rem;
             border-radius: 4px;
             transition: opacity 0.2s;
+            border: 0;
+            cursor: pointer;
         }
         .btn:hover { opacity: 0.85; }
         .services {
@@ -127,8 +129,34 @@
             margin-bottom: 1rem;
         }
         .contact h2::before { content: "> "; color: var(--accent); }
-        .contact p { color: var(--muted); margin-bottom: 1rem; }
-        .contact a { color: var(--accent); text-decoration: none; }
+        .contact p { color: var(--muted); margin-bottom: 1.5rem; }
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+        }
+        .contact-form label {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            margin-top: 0.35rem;
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: var(--bg2);
+            color: var(--text);
+            font: inherit;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        .contact-form textarea { min-height: 140px; resize: vertical; }
+        .contact-form .btn { justify-self: start; }
         footer {
             text-align: center;
             padding: 2rem;
@@ -195,7 +223,22 @@
 <section class="contact" id="contact">
     <h2>Contact_</h2>
     <p>Have a project in mind? Let's talk.</p>
-    <a href="mailto:webcrafters071@gmail.com">webcrafters071@gmail.com</a>
+    <form class="contact-form" action="https://formspree.io/f/meaogrqp" method="POST">
+        <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+            Message
+            <textarea name="message" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="New Stacknode project inquiry">
+        <button class="btn" type="submit">Send Message</button>
+    </form>
 </section>
 
 <footer>
