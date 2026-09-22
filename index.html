@@ -4,8 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stacknode | Web & Infrastructure Studio</title>
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --bg2: #1a1a1a;
+            --text: #e0e0e0;
+            --muted: #888888;
+            --accent: #00a3ff;
+            --border: #2a2a2a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        nav .logo {
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        nav .logo span { color: var(--accent); }
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--accent); }
+        .hero {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+        .hero p.tag {
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero p.sub {
+            color: var(--muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.85; }
+        .services {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        .services h2 {
+            font-family: monospace;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .services h2::before { content: "> "; color: var(--accent); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+        .card:hover { border-color: var(--accent); }
+        .card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+        .contact {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+        }
+        .contact h2 {
+            font-family: monospace;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .contact h2::before { content: "> "; color: var(--accent); }
+        .contact p { color: var(--muted); margin-bottom: 1rem; }
+        .contact a { color: var(--accent); text-decoration: none; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
-    <h1>Stacknode</h1>
+
+<nav>
+    <div class="logo">Stack<span>node</span></div>
+    <div>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <p class="tag">// Web & Infrastructure Studio</p>
+    <h1>We build what<br><span>runs your business.</span></h1>
+    <p class="sub">From the website your clients see to the infrastructure that never sleeps — we handle both.</p>
+    <a href="#contact" class="btn">Start a Project</a>
+</section>
+
+<section class="services" id="services">
+    <h2>Services_</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>Website Development</h3>
+            <p>Clean, fast, mobile-ready websites built from scratch for businesses that need a real web presence.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Repair & Redesign</h3>
+            <p>Auditing and rebuilding slow, outdated websites — stripping bloat and restoring performance.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🐧</div>
+            <h3>Linux Server Setup</h3>
+            <p>Provisioning and hardening Linux servers with custom systemd daemons, firewalls and SSH policies.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📡</div>
+            <h3>Infrastructure Monitoring</h3>
+            <p>Deploying lightweight C-based monitoring agents with SQLite logging and real-time webhook alerts.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🔒</div>
+            <h3>VPN & Network Security</h3>
+            <p>Configuring WireGuard and OpenVPN tunnels with firewall rules for secure private networks.</p>
+        </div>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Proxmox & Virtual Labs</h3>
+            <p>Building isolated hypervisor environments for safe testing and enterprise software deployment.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact_</h2>
+    <p>Have a project in mind? Let's talk.</p>
+    <a href="mailto:webcrafters071@gmail.com">webcrafters071@gmail.com</a>
+</section>
+
+<footer>
+    [stacknode ~]$ status: active_ &nbsp;|&nbsp; © 2026 Stacknode
+</footer>
+
 </body>
 </html>
