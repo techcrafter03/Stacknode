@@ -4,149 +4,1267 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stacknode — Web & Infrastructure Studio</title>
-  <meta name="description" content="Stacknode builds websites and deploys Linux infrastructure for small businesses and startups. Code. Infrastructure. Results.">
+  <meta name="description" content="Stacknode builds professional websites and deploys Linux infrastructure for businesses worldwide. Code. Infrastructure. Results.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root { --bg:#080808; --bg2:#111; --bg3:#1a1a1a; --border:#222; --text:#d4d4d4; --muted:#5a5a5a; --accent:#2563eb; --accentH:#1d4ed8; --white:#f5f5f5; }
-    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; }
-    nav { position:sticky; top:0; z-index:99; display:flex; justify-content:space-between; align-items:center; padding:1.1rem 2rem; background:rgba(8,8,8,.88); backdrop-filter:blur(14px); border-bottom:1px solid var(--border); }
-    .logo { font-family:'JetBrains Mono',monospace; font-size:1rem; font-weight:500; color:var(--white); text-decoration:none; }
-    .logo em { color:var(--accent); font-style:normal; }
-    .nav-links { display:flex; align-items:center; gap:1.75rem; }
-    .nav-links a { color:var(--muted); text-decoration:none; font-size:.85rem; font-weight:500; transition:color .2s; }
-    .nav-links a:hover { color:var(--text); }
-    .nav-btn { background:var(--accent); color:#fff!important; padding:.45rem 1rem; border-radius:5px; }
-    .nav-btn:hover { background:var(--accentH)!important; }
-    .hero { max-width:900px; margin:0 auto; padding:8rem 2rem 6rem; }
-    .mono-tag { font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--accent); margin-bottom:1.25rem; display:block; }
-    .hero h1 { font-size:clamp(2.2rem,5.5vw,3.75rem); font-weight:700; color:var(--white); line-height:1.1; letter-spacing:-.5px; margin-bottom:1.5rem; max-width:680px; }
-    .hero-sub { color:var(--muted); font-size:1.05rem; max-width:520px; margin-bottom:.75rem; line-height:1.75; }
-    .latin { font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--border); margin-bottom:2.5rem; letter-spacing:.5px; }
-    .hero-btns { display:flex; gap:.75rem; flex-wrap:wrap; }
-    .btn { display:inline-block; text-decoration:none; font-size:.875rem; font-weight:500; padding:.65rem 1.35rem; border-radius:5px; transition:background .2s,border-color .2s,color .2s; cursor:pointer; font-family:'Inter',sans-serif; }
-    .btn-blue { background:var(--accent); color:#fff; border:0; }
-    .btn-blue:hover { background:var(--accentH); }
-    .btn-ghost { border:1px solid var(--border); color:var(--text); background:transparent; }
-    .btn-ghost:hover { border-color:var(--muted); color:var(--white); }
-    .trust { border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:.9rem 0; }
-    .marquee-track { display:flex; gap:3rem; animation:marquee 22s linear infinite; white-space:nowrap; width:max-content; }
-    .trust-item { display:flex; align-items:center; gap:.5rem; font-size:.8rem; color:var(--muted); }
-    .trust-item span { color:var(--accent); }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .section { max-width:900px; margin:0 auto; padding:5rem 2rem; }
-    .section-tag { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--accent); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:.75rem; display:block; }
-    .section h2 { font-size:clamp(1.5rem,3vw,2.1rem); font-weight:700; color:var(--white); letter-spacing:-.3px; margin-bottom:.75rem; }
-    .section-sub { color:var(--muted); max-width:520px; line-height:1.75; margin-bottom:3rem; font-size:.95rem; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:8px; overflow:hidden; }
-    .s-card { background:var(--bg2); padding:1.75rem; transition:background .2s; }
-    .s-card:hover { background:var(--bg3); }
-    .s-icon { font-size:1.1rem; margin-bottom:.9rem; }
-    .s-card h3 { font-size:.95rem; font-weight:600; color:var(--white); margin-bottom:.4rem; }
-    .s-card p { font-size:.85rem; color:var(--muted); line-height:1.65; }
-    .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.25rem; }
-    .p-card { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:1.75rem; position:relative; }
-    .p-card.featured { border-color:var(--accent); }
-    .p-badge { position:absolute; top:-11px; left:1.25rem; background:var(--accent); color:#fff; font-size:.65rem; font-weight:600; font-family:'JetBrains Mono',monospace; padding:.15rem .5rem; border-radius:4px; text-transform:uppercase; letter-spacing:.5px; }
-    .p-card h3 { font-size:.9rem; font-weight:600; color:var(--white); margin-bottom:.5rem; }
-    .p-price { font-size:1.9rem; font-weight:700; color:var(--white); line-height:1; margin-bottom:.25rem; }
-    .p-price small { font-size:.85rem; color:var(--muted); font-weight:400; }
-    .p-desc { font-size:.83rem; color:var(--muted); margin-bottom:1.25rem; line-height:1.65; }
-    .p-card ul { list-style:none; margin-bottom:1.5rem; }
-    .p-card li { font-size:.83rem; color:var(--muted); padding:.3rem 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:.5rem; }
-    .p-card li::before { content:'✓'; color:var(--accent); font-size:.7rem; }
-    .p-card .btn { width:100%; text-align:center; }
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:3.5rem; align-items:start; }
-    .about-text p { font-size:.93rem; color:var(--muted); line-height:1.8; margin-bottom:1rem; }
-    .about-text p:last-of-type { margin-bottom:1.5rem; }
-    .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .stat-box { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:1.25rem; }
-    .stat-num { font-size:1.75rem; font-weight:700; color:var(--white); line-height:1; margin-bottom:.3rem; }
-    .stat-label { font-size:.78rem; color:var(--muted); }
-    .faq-list { border-top:1px solid var(--border); }
-    .faq-item { border-bottom:1px solid var(--border); }
-    .faq-btn { width:100%; background:none; border:0; color:var(--text); font-family:'Inter',sans-serif; font-size:.92rem; font-weight:500; text-align:left; padding:1.1rem 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
-    .faq-btn:hover { color:var(--white); }
-    .faq-plus { color:var(--accent); font-size:1.1rem; font-family:'JetBrains Mono',monospace; flex-shrink:0; transition:transform .25s; }
-    .faq-item.open .faq-plus { transform:rotate(45deg); }
-    .faq-ans { max-height:0; overflow:hidden; transition:max-height .3s ease,padding .3s ease; }
-    .faq-item.open .faq-ans { max-height:200px; padding-bottom:1.1rem; }
-    .faq-ans p { font-size:.88rem; color:var(--muted); line-height:1.75; }
-    #contact { border-top:1px solid var(--border); }
-    .contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:start; }
-    .contact-info p { font-size:.93rem; color:var(--muted); line-height:1.75; margin-bottom:1.75rem; }
-    .contact-links { display:flex; flex-direction:column; gap:.65rem; }
-    .contact-links a { font-size:.87rem; color:var(--muted); text-decoration:none; display:flex; align-items:center; gap:.5rem; }
-    .contact-links a:hover { color:var(--accent); }
-    .cf { display:flex; flex-direction:column; gap:.9rem; }
-    .cf label { font-size:.78rem; color:var(--muted); font-weight:500; display:block; margin-bottom:.3rem; }
-    .cf input,.cf textarea,.cf select { width:100%; background:var(--bg2); border:1px solid var(--border); border-radius:5px; color:var(--text); font-family:'Inter',sans-serif; font-size:.88rem; padding:.7rem .9rem; transition:border-color .2s; }
-    .cf input:focus,.cf textarea:focus,.cf select:focus { outline:none; border-color:var(--accent); }
-    .cf textarea { resize:vertical; min-height:110px; }
-    .cf select option { background:var(--bg2); }
-    .cf .btn { width:100%; text-align:center; border:none; }
-    footer { border-top:1px solid var(--border); padding:1.75rem 2rem; }
-    .foot-inner { max-width:900px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
-    .foot-left { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--muted); }
-    .foot-left em { color:var(--accent); font-style:normal; }
-    .foot-links { display:flex; gap:1.5rem; }
-    .foot-links a { font-size:.8rem; color:var(--muted); text-decoration:none; }
-    .foot-links a:hover { color:var(--text); }
-    .fade { opacity:0; transform:translateY(18px); transition:opacity .55s ease,transform .55s ease; }
-    .fade.visible { opacity:1; transform:translateY(0); }
-    @media (max-width:720px) { nav{padding:1rem 1.25rem}.nav-links a:not(.nav-btn){display:none}.hero{padding:5rem 1.25rem 4rem}.section{padding:3.5rem 1.25rem}.about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}.stats-grid{grid-template-columns:1fr 1fr} }
-    @media (prefers-reduced-motion:reduce) { .marquee-track{animation:none}.fade{opacity:1;transform:none;transition:none} }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- ── NAV ── -->
 <nav>
-  <a href="index.html" class="logo">Stack<em>node</em></a>
+  <a href="#" class="logo">Stack<em>node</em></a>
   <div class="nav-links">
-    <a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact" class="nav-btn">Start a project</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="nav-btn">Start a project →</a>
   </div>
 </nav>
+
+<!-- ── HERO ── -->
 <div class="hero">
-  <span class="mono-tag">// Web & Infrastructure Studio</span>
-  <h1>Code. Infrastructure.<br>Results.</h1>
+  <span class="mono-tag">Web & Infrastructure Studio</span>
+  <h1>Code. Infrastructure.<br><span class="gradient">Results.</span></h1>
   <p class="hero-sub">From the website your clients see to the Linux systems that keep everything running — built properly, priced honestly.</p>
   <p class="latin">Construimus quod manet — We build what endures.</p>
-  <div class="hero-btns"><a href="#contact" class="btn btn-blue">Start a project</a><a href="#work" class="btn btn-ghost">See our work</a></div>
+  <div class="hero-btns">
+    <a href="#contact" class="btn btn-blue">Start a project →</a>
+    <a href="#work" class="btn btn-ghost">See our work</a>
+  </div>
 </div>
-<div class="trust" aria-hidden="true"><div class="marquee-track">
-  <div class="trust-item"><span>⚡</span> Fast delivery</div><div class="trust-item"><span>🔒</span> No lock-in contracts</div><div class="trust-item"><span>🌍</span> Remote — worldwide</div><div class="trust-item"><span>💬</span> English & German</div><div class="trust-item"><span>📋</span> Fixed pricing</div><div class="trust-item"><span>🐧</span> Linux native</div><div class="trust-item"><span>✦</span> Creativity & authenticity</div>
-  <div class="trust-item"><span>⚡</span> Fast delivery</div><div class="trust-item"><span>🔒</span> No lock-in contracts</div><div class="trust-item"><span>🌍</span> Remote — worldwide</div><div class="trust-item"><span>💬</span> English & German</div><div class="trust-item"><span>📋</span> Fixed pricing</div><div class="trust-item"><span>🐧</span> Linux native</div><div class="trust-item"><span>✦</span> Creativity & authenticity</div>
-</div></div>
-<section class="section" id="services"><span class="section-tag">// Services</span><h2 class="fade">Two sides. One studio.</h2><p class="section-sub fade">Most agencies do web or infrastructure. We do both — because your website and your server need to work together.</p><div class="services-grid fade">
-  <div class="s-card"><div class="s-icon">🌐</div><h3>Website Development</h3><p>Clean, fast, mobile-ready sites built from scratch. Semantic HTML, no bloated frameworks, built to load fast and work on every device.</p></div>
-  <div class="s-card"><div class="s-icon">🔧</div><h3>Repair & Redesign</h3><p>Slow, broken, or outdated? We audit what is wrong and rebuild it properly — not patch it and leave.</p></div>
-  <div class="s-card"><div class="s-icon">🐧</div><h3>Linux Server Setup</h3><p>Provisioning and hardening Linux servers — SSH policies, firewall rules, systemd services, automated backups.</p></div>
-  <div class="s-card"><div class="s-icon">📡</div><h3>Infrastructure Monitoring</h3><p>Lightweight agents reading directly from the Linux kernel. Real-time webhook alerts, full SQLite audit trail. Zero external dependencies.</p></div>
-  <div class="s-card"><div class="s-icon">🔒</div><h3>VPN & Network Security</h3><p>WireGuard and OpenVPN configuration with custom firewall rules for secure private networks and remote teams.</p></div>
-  <div class="s-card"><div class="s-icon">⚙️</div><h3>Proxmox & Virtual Labs</h3><p>Isolated hypervisor environments for safe staging, testing, and enterprise software deployment.</p></div>
-</div></section>
-<section class="section" id="pricing" style="padding-top:0"><span class="section-tag">// Pricing</span><h2 class="fade">Clear pricing. No surprises.</h2><p class="section-sub fade">Fixed project rates. You know the number before we start. No hourly billing, no scope creep invoices.</p><div class="pricing-grid">
-  <div class="p-card fade"><h3>Starter Site</h3><div class="p-price">€399 <small>one-time</small></div><p class="p-desc">A clean, professional website for small businesses that need a real web presence — without the agency markup.</p><ul><li>Up to 5 pages</li><li>Mobile responsive</li><li>Contact form</li><li>Basic SEO setup</li><li>2 revision rounds</li></ul><a href="#contact" class="btn btn-ghost">Get started</a></div>
-  <div class="p-card featured fade"><div class="p-badge">Most popular</div><h3>Business Site</h3><div class="p-price">€899 <small>one-time</small></div><p class="p-desc">A full business website with custom design, more pages, and everything configured to actually bring in clients.</p><ul><li>Up to 10 pages</li><li>Custom design</li><li>CMS integration</li><li>SEO optimised</li><li>3 months support</li><li>Performance tuning</li></ul><a href="#contact" class="btn btn-blue">Get started</a></div>
-  <div class="p-card fade"><h3>Linux Infrastructure</h3><div class="p-price">€199 <small>per setup</small></div><p class="p-desc">Server hardening, monitoring deployment, VPN or Proxmox setup. Scoped and priced per project.</p><ul><li>Server hardening</li><li>Monitoring agent deploy</li><li>VPN configuration</li><li>Proxmox setup</li><li>Full documentation</li></ul><a href="#contact" class="btn btn-ghost">Discuss project</a></div>
-</div></section>
-<section class="section" id="about"><span class="section-tag">// About</span><h2 class="fade">Built by someone who actually uses Linux.</h2><div class="about-grid"><div class="about-text fade"><p>Stacknode is run by Yash Kale — a self-taught developer from Maharashtra, India. Since 2022, I have been building Linux systems, configuring servers, writing Bash scripts, and developing real infrastructure.</p><p>I built my own Linux monitoring agent in C that reads directly from the kernel — no external dependencies, deploys in under 10 minutes on any Linux system. That is the kind of work Stacknode brings to every project.</p><p>Creativity and authenticity are not extras — they are how every project is approached. I work with small businesses, startups, and technical teams who want real work done without enterprise agency rates.</p><a href="#contact" class="btn btn-ghost">Work with me</a></div><div class="stats-grid fade"><div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Years building Linux systems</div></div><div class="stat-box"><div class="stat-num">3</div><div class="stat-label">Active infrastructure projects</div></div><div class="stat-box"><div class="stat-num">2</div><div class="stat-label">Languages — English & German</div></div><div class="stat-box"><div class="stat-num">0</div><div class="stat-label">Dependencies in our monitoring agent</div></div></div></div></section>
-<section class="section" id="work"><span class="section-tag">// Work</span><h2 class="fade">Practical systems, built to last.</h2><p class="section-sub fade">From fast static sites to Linux monitoring and secure networks, every project is designed around reliability, clarity, and useful results.</p></section>
-<section class="section" id="faq" style="padding-top:0"><span class="section-tag">// FAQ</span><h2 class="fade">Common questions.</h2><p class="section-sub fade" style="margin-bottom:2rem">If something is not here, just ask directly.</p><div class="faq-list fade">
-  <div class="faq-item"><button class="faq-btn" type="button">How long does a website project take? <span class="faq-plus">+</span></button><div class="faq-ans"><p>A Starter Site takes 7–10 working days from content received to delivery. A Business Site takes 2–3 weeks. Infrastructure projects are scoped individually.</p></div></div>
-  <div class="faq-item"><button class="faq-btn" type="button">Do you work with clients outside India? <span class="faq-plus">+</span></button><div class="faq-ans"><p>Yes — all projects are handled remotely. We work with clients across Europe, the US, and India. Communication is in English or German.</p></div></div>
-  <div class="faq-item"><button class="faq-btn" type="button">What do you need from me to get started? <span class="faq-plus">+</span></button><div class="faq-ans"><p>For a website: your logo, content notes, and design preferences. For infrastructure: SSH access and a clear description of what you need.</p></div></div>
-  <div class="faq-item"><button class="faq-btn" type="button">Can you maintain the site or infrastructure after delivery? <span class="faq-plus">+</span></button><div class="faq-ans"><p>Yes. Ongoing maintenance is available monthly. Business Site includes 3 months of support and infrastructure deployments include documentation.</p></div></div>
-  <div class="faq-item"><button class="faq-btn" type="button">What Linux distributions do you support? <span class="faq-plus">+</span></button><div class="faq-ans"><p>Ubuntu, Debian, and Raspbian are our primary environments. Most configurations work across systemd-based Linux distributions.</p></div></div>
-</div></section>
-<section class="section" id="contact"><span class="section-tag">// Contact</span><h2>Start a project.</h2><div class="contact-grid"><div class="contact-info"><p>Tell us what you need. We will get back to you within one working day with a clear answer — no sales call required to get basic information.</p><div class="contact-links"><a href="mailto:stacknode.studio@gmail.com">✉ stacknode.studio@gmail.com</a><a href="https://github.com/techcrafter03" target="_blank" rel="noopener noreferrer">⌥ github.com/techcrafter03</a><a href="https://linkedin.com/in/yash-kale-509b92311" target="_blank" rel="noopener noreferrer">in LinkedIn</a></div></div><form id="contact-form" class="cf" action="https://formspree.io/f/meaogrqp" method="POST"><div><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Jan Müller" autocomplete="name" required></div><div><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="jan@company.de" autocomplete="email" required></div><div><label for="service">What do you need?</label><select id="service" name="service"><option value="">Select a service</option><option value="starter-site">Starter Site (€399)</option><option value="business-site">Business Site (€899)</option><option value="infrastructure">Linux Infrastructure (€199+)</option><option value="other">Something else</option></select></div><div><label for="message">Brief description</label><textarea id="message" name="message" placeholder="Tell us a bit about your project..." required></textarea></div><input type="hidden" name="_subject" value="New Stacknode project inquiry"><button type="submit" class="btn btn-blue">Send message</button></form></div></section>
-<footer><div class="foot-inner"><div class="foot-left">Stack<em>node</em> · Construimus quod manet · © 2026</div><div class="foot-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#work">Work</a><a href="#contact">Contact</a></div></div></footer>
-<script>
-  document.querySelectorAll('.faq-btn').forEach(btn => btn.addEventListener('click', () => { const item=btn.parentElement; const open=item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open')); if(!open)item.classList.add('open'); }));
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.12});
-  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
-</script>
+
+<!-- ── MARQUEE ── -->
+<div class="trust" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="trust-item"><span class="dot">●</span> Fast delivery</div>
+    <div class="trust-item"><span class="dot">●</span> No lock-in contracts</div>
+    <div class="trust-item"><span class="dot">●</span> Remote — worldwide</div>
+    <div class="trust-item"><span class="dot">●</span> English & German</div>
+    <div class="trust-item"><span class="dot">●</span> Fixed pricing</div>
+    <div class="trust-item"><span class="dot">●</span> Linux native</div>
+    <div class="trust-item"><span class="dot">●</span> Creativity & authenticity</div>
+    <div class="trust-item"><span class="dot">●</span> Response within 24h</div>
+    <!-- duplicate for seamless loop -->
+    <div class="trust-item"><span class="dot">●</span> Fast delivery</div>
+    <div class="trust-item"><span class="dot">●</span> No lock-in contracts</div>
+    <div class="trust-item"><span class="dot">●</span> Remote — worldwide</div>
+    <div class="trust-item"><span class="dot">●</span> English & German</div>
+    <div class="trust-item"><span class="dot">●</span> Fixed pricing</div>
+    <div class="trust-item"><span class="dot">●</span> Linux native</div>
+    <div class="trust-item"><span class="dot">●</span> Creativity & authenticity</div>
+    <div class="trust-item"><span class="dot">●</span> Response within 24h</div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="section" id="services">
+  <span class="section-tag">Services</span>
+  <h2 class="fade">Two disciplines.<br>One studio.</h2>
+  <p class="section-sub fade">Most agencies handle web or infrastructure. We do both — because your frontend and your server have to work together.</p>
+  <div class="services-grid fade">
+    <div class="s-card">
+      <div class="s-icon">🌐</div>
+      <h3>Website Development</h3>
+      <p>Clean, fast, mobile-ready websites built from scratch. No bloated frameworks — semantic HTML, real CSS, built to convert.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🔧</div>
+      <h3>Repair & Redesign</h3>
+      <p>Slow, broken, or outdated? We audit what is wrong and rebuild it properly — not patch it and leave you with more problems.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🐧</div>
+      <h3>Linux Server Setup</h3>
+      <p>Provisioning and hardening Linux servers — custom systemd services, SSH policies, firewall rules, automated backups.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">📡</div>
+      <h3>Infrastructure Monitoring</h3>
+      <p>Lightweight C-based agents reading directly from the Linux kernel. Real-time webhook alerts, full SQLite audit trail. Zero dependencies.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">🔒</div>
+      <h3>VPN & Network Security</h3>
+      <p>WireGuard and OpenVPN configuration with firewall rules and routing policies for secure private networks and remote teams.</p>
+    </div>
+    <div class="s-card">
+      <div class="s-icon">⚙️</div>
+      <h3>Proxmox & Virtual Labs</h3>
+      <p>Isolated hypervisor environments for safe staging, testing, and enterprise software deployment without risking production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item fade">
+      <div class="stat-num"><span data-target="4" data-suffix="+">4+</span></div>
+      <div class="stat-label">Years building<br>Linux systems</div>
+    </div>
+    <div class="stat-item fade fade-delay-1">
+      <div class="stat-num"><span data-target="3">3</span></div>
+      <div class="stat-label">Active infrastructure<br>projects</div>
+    </div>
+    <div class="stat-item fade fade-delay-2">
+      <div class="stat-num"><span data-target="2">2</span></div>
+      <div class="stat-label">Languages —<br>English & German</div>
+    </div>
+    <div class="stat-item fade fade-delay-3">
+      <div class="stat-num"><span data-target="0">0</span></div>
+      <div class="stat-label">External dependencies<br>in our monitoring agent</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PROCESS ── -->
+<section class="section" id="process">
+  <span class="section-tag">How we work</span>
+  <h2 class="fade">Simple. Transparent.<br>No surprises.</h2>
+  <p class="section-sub fade">Four steps from first message to delivered project.</p>
+  <div class="process-grid">
+    <div class="proc-card fade">
+      <div class="proc-num">01 —</div>
+      <h3>You reach out</h3>
+      <p>Tell us what you need via the contact form or email. We respond within one working day — no sales call required for basic information.</p>
+    </div>
+    <div class="proc-card fade fade-delay-1">
+      <div class="proc-num">02 —</div>
+      <h3>We scope it</h3>
+      <p>A short call or email exchange to align on requirements, timeline, and price. Fixed scope before we start — no surprises later.</p>
+    </div>
+    <div class="proc-card fade fade-delay-2">
+      <div class="proc-num">03 —</div>
+      <h3>We build it</h3>
+      <p>You get progress updates at key milestones. Web projects include revision rounds. Infrastructure projects include documentation.</p>
+    </div>
+    <div class="proc-card fade fade-delay-3">
+      <div class="proc-num">04 —</div>
+      <h3>You own it</h3>
+      <p>Full handover — code, credentials, documentation. No dependency on us to keep things running unless you want ongoing support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="section" id="pricing" style="padding-top:0;">
+  <span class="section-tag">Pricing</span>
+  <h2 class="fade">Clear pricing.<br>No hourly surprises.</h2>
+  <p class="section-sub fade">Fixed project rates. You know the number before we start — no hourly billing, no invoice surprises at the end.</p>
+  <div class="pricing-grid">
+    <div class="p-card fade">
+      <span class="p-label">Web — Starter</span>
+      <div class="p-price">€399 <small>one-time</small></div>
+      <p class="p-desc">A clean, professional website for small businesses that need a real web presence without the agency markup.</p>
+      <ul>
+        <li><span class="check">✓</span> Up to 5 pages</li>
+        <li><span class="check">✓</span> Mobile responsive</li>
+        <li><span class="check">✓</span> Contact form included</li>
+        <li><span class="check">✓</span> Basic SEO setup</li>
+        <li><span class="check">✓</span> 2 revision rounds</li>
+        <li><span class="check">✓</span> Delivered in 7–10 days</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost btn-full">Get started →</a>
+    </div>
+    <div class="p-card featured fade fade-delay-1">
+      <div class="p-badge">Most popular</div>
+      <span class="p-label">Web — Business</span>
+      <div class="p-price">€899 <small>one-time</small></div>
+      <p class="p-desc">A full business website with custom design, everything configured to actually bring in clients and build trust.</p>
+      <ul>
+        <li><span class="check">✓</span> Up to 10 pages</li>
+        <li><span class="check">✓</span> Custom design</li>
+        <li><span class="check">✓</span> CMS integration</li>
+        <li><span class="check">✓</span> SEO optimised</li>
+        <li><span class="check">✓</span> 3 months post-launch support</li>
+        <li><span class="check">✓</span> Performance tuning</li>
+      </ul>
+      <a href="#contact" class="btn btn-blue btn-full">Get started →</a>
+    </div>
+    <div class="p-card fade">
+      <span class="p-label">Infrastructure</span>
+      <div class="p-price">€299 <small>per setup</small></div>
+      <p class="p-desc">Server hardening, VPN configuration, or Proxmox lab setup. Scoped and priced per project with full documentation.</p>
+      <ul>
+        <li><span class="check">✓</span> Linux server hardening</li>
+        <li><span class="check">✓</span> VPN configuration</li>
+        <li><span class="check">✓</span> Proxmox lab setup</li>
+        <li><span class="check">✓</span> Firewall & SSH policies</li>
+        <li><span class="check">✓</span> Full documentation</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost btn-full">Discuss project →</a>
+    </div>
+    <div class="p-card fade fade-delay-1">
+      <span class="p-label">iPaaS Monitoring</span>
+      <div class="p-price">€199 <small>per deployment</small></div>
+      <p class="p-desc">Deploy our open-source Linux monitoring agent on your server — kernel-native, zero dependencies, real-time alerts.</p>
+      <ul>
+        <li><span class="check">✓</span> Reads from /proc/ and /sys/</li>
+        <li><span class="check">✓</span> SQLite audit trail</li>
+        <li><span class="check">✓</span> Webhook alerts (Slack/Teams/Discord)</li>
+        <li><span class="check">✓</span> Auto-shutdown on critical threshold</li>
+        <li><span class="check">✓</span> Deployed in under 10 minutes</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost btn-full">Deploy now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WORK ── -->
+<section class="section" id="work" style="padding-top:0;">
+  <span class="section-tag">Work</span>
+  <h2 class="fade">Real projects.<br>Real infrastructure.</h2>
+  <p class="section-sub fade">Every project here is live, documented, and open to inspect.</p>
+  <div class="work-grid">
+    <div class="w-card fade">
+      <div class="w-preview">
+        <div class="terminal-mock">
+          <div class="t-bar">
+            <div class="t-dot t-red"></div>
+            <div class="t-dot t-yellow"></div>
+            <div class="t-dot t-green"></div>
+          </div>
+          <div class="t-line">$ ./setup.sh</div>
+          <div class="t-line"><span>[✓]</span> C engine compiled</div>
+          <div class="t-line"><span>[✓]</span> systemd timer active</div>
+          <div class="t-line"><span>[✓]</span> SQLite DB initialised</div>
+          <div class="t-line"><span>[✓]</span> Webhook configured</div>
+          <div class="t-line"><span>[→]</span> Monitoring /proc/thermal...</div>
+          <div class="t-dim">CPU: 42°C · RAM: 34% · OK</div>
+        </div>
+      </div>
+      <div class="w-body">
+        <span class="w-tag">Open source · Infrastructure</span>
+        <h3>iPaaS Edge Monitoring Hub</h3>
+        <p>A production-ready Linux monitoring agent written in C. Reads kernel metrics directly from /proc/ and /sys/ via POSIX calls, logs to SQLite, fires webhook alerts, and auto-shuts down on critical temperature thresholds. Zero external dependencies.</p>
+        <div class="w-tech">
+          <span class="tech-tag">C / POSIX</span>
+          <span class="tech-tag">Bash</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">systemd</span>
+          <span class="tech-tag">Webhook API</span>
+        </div>
+        <a href="https://github.com/techcrafter03/ipass-edge-hub" target="_blank" class="w-link">View on GitHub →</a>
+      </div>
+    </div>
+    <div class="w-card fade fade-delay-1">
+      <div class="w-preview">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <div class="b-dots">
+              <div class="b-dot b-red"></div>
+              <div class="b-dot b-yellow"></div>
+              <div class="b-dot b-green"></div>
+            </div>
+            <div class="b-url">stacknode.studio</div>
+          </div>
+          <div class="browser-content">
+            <div class="b-hero-block"></div>
+            <div class="b-grid">
+              <div class="b-block"></div>
+              <div class="b-block"></div>
+              <div class="b-block"></div>
+              <div class="b-block"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-body">
+        <span class="w-tag">Web · Live</span>
+        <h3>Stacknode — This site</h3>
+        <p>Built from scratch — no templates, no WordPress, no page builders. Pure HTML, CSS, and vanilla JavaScript hosted on GitHub Pages. Responsive, fast, and fully open to inspect.</p>
+        <div class="w-tech">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS Grid</span>
+          <span class="tech-tag">Vanilla JS</span>
+          <span class="tech-tag">GitHub Pages</span>
+        </div>
+        <a href="https://github.com/techcrafter03/Stacknode" target="_blank" class="w-link">View source →</a>
+      </div>
+    </div>
+    <div class="w-card fade">
+      <div class="w-preview">
+        <div class="terminal-mock">
+          <div class="t-bar">
+            <div class="t-dot t-red"></div>
+            <div class="t-dot t-yellow"></div>
+            <div class="t-dot t-green"></div>
+          </div>
+          <div class="t-line">$ wg show</div>
+          <div class="t-line"><span>interface:</span> wg0</div>
+          <div class="t-line"><span>public key:</span> xYz...abc</div>
+          <div class="t-line"><span>listening port:</span> 51820</div>
+          <div class="t-line"> </div>
+          <div class="t-line"><span>peer:</span> 3 connected</div>
+          <div class="t-dim">transfer: 1.2 GiB received</div>
+        </div>
+      </div>
+      <div class="w-body">
+        <span class="w-tag">Infrastructure · Self-hosted</span>
+        <h3>Private VPN Server</h3>
+        <p>Self-hosted WireGuard and OpenVPN setup on a Raspberry Pi — custom routing protocols, firewall rules with iptables, and server log monitoring for a secure private network.</p>
+        <div class="w-tech">
+          <span class="tech-tag">WireGuard</span>
+          <span class="tech-tag">OpenVPN</span>
+          <span class="tech-tag">iptables</span>
+          <span class="tech-tag">Raspbian</span>
+        </div>
+        <a href="https://github.com/techcrafter03" target="_blank" class="w-link">View profile →</a>
+      </div>
+    </div>
+    <div class="w-card fade fade-delay-1">
+      <div class="w-preview" style="background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);">
+        <div style="text-align:center; padding: 1.5rem;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:.65rem; color:#2563eb; margin-bottom:.75rem; letter-spacing:.1em;">// NEXT PROJECT</div>
+          <div style="font-size:.85rem; color:#525252; line-height:1.6; max-width:180px; margin:0 auto;">Multi-machine monitoring dashboard with REST API and web UI</div>
+          <div style="margin-top:1rem; font-family:'JetBrains Mono',monospace; font-size:.6rem; color:#1f1f1f;">In development → Q4 2026</div>
+        </div>
+      </div>
+      <div class="w-body">
+        <span class="w-tag">Infrastructure · In development</span>
+        <h3>iPaaS Multi-Machine Dashboard</h3>
+        <p>Scaling the monitoring hub to support distributed Linux nodes — a central REST API collector aggregating metrics from multiple agents into a unified web dashboard.</p>
+        <div class="w-tech">
+          <span class="tech-tag">C / TCP</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">SQLite</span>
+          <span class="tech-tag">HTML/JS</span>
+        </div>
+        <a href="https://github.com/techcrafter03/ipass-edge-hub" target="_blank" class="w-link">Follow progress →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-banner fade">
+  <h2>Free 15-minute consultation.</h2>
+  <p>Not sure what you need or whether we are the right fit? Ask directly. No pitch, no pressure — just a straight conversation about your project.</p>
+  <div class="cta-btns">
+    <a href="mailto:stacknode.studio@gmail.com?subject=Free Consultation Request" class="btn btn-blue">Book a free call →</a>
+    <a href="#pricing" class="btn btn-ghost">See pricing first</a>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="section" id="about">
+  <span class="section-tag">About</span>
+  <h2 class="fade">Built by someone who<br>actually uses Linux.</h2>
+  <div class="about-grid">
+    <div class="about-text fade">
+      <p>Stacknode is run by Yash Kale — a self-taught developer from Maharashtra, India. Since 2022, building Linux systems, configuring servers, writing Bash scripts, and developing web projects from the ground up has been the daily work.</p>
+      <p>The iPaaS Edge Monitoring Hub — a kernel-native C monitoring agent with zero external dependencies — is what Stacknode is built on. Not a tutorial project. A deployed, documented, open-source tool that runs in production.</p>
+      <p>The studio works with small businesses, startups, and technical teams who want real infrastructure work done without enterprise agency pricing. English and German both work.</p>
+      <div class="about-tags">
+        <span class="about-tag">C / POSIX</span>
+        <span class="about-tag">Bash</span>
+        <span class="about-tag">Linux</span>
+        <span class="about-tag">SQLite</span>
+        <span class="about-tag">systemd</span>
+        <span class="about-tag">WireGuard</span>
+        <span class="about-tag">OpenVPN</span>
+        <span class="about-tag">HTML/CSS/JS</span>
+        <span class="about-tag">Git</span>
+        <span class="about-tag">Proxmox</span>
+      </div>
+      <a href="#contact" class="btn btn-ghost">Work with us →</a>
+    </div>
+    <div class="founder-card fade fade-delay-1">
+      <div class="founder-avatar">👨‍💻</div>
+      <div class="founder-name">Yash Kale</div>
+      <div class="founder-role">// Founder & Developer</div>
+      <p class="founder-bio">Self-taught. Started with a Raspberry Pi in 2022. Built a Linux monitoring agent in C from the kernel up. Currently expanding iPaaS to multi-machine support with a REST API and web dashboard.</p>
+      <p class="founder-bio">Works in English and German. Based in India, available remotely worldwide.</p>
+      <div class="founder-stack">
+        <span class="tech-tag">Maharashtra, India</span>
+        <span class="tech-tag">Remote worldwide</span>
+        <span class="tech-tag">EN & DE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<hr class="divider">
+<section class="section" id="faq" style="padding-top:4rem;">
+  <span class="section-tag">FAQ</span>
+  <h2 class="fade">Common questions.</h2>
+  <p class="section-sub fade" style="margin-bottom:2rem;">If something is not here, just ask directly — we respond within one working day.</p>
+  <div class="faq-list fade">
+    <div class="faq-item">
+      <button class="faq-btn">How long does a website project take? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>Starter Site: 7–10 working days from content received to delivery. Business Site: 2–3 weeks. Infrastructure projects are scoped individually — most Linux setups complete in 3–5 working days.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn">Do you work with clients outside India? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>Yes — all projects are handled remotely. We work with clients across Europe, the US, and India. Communication is in English or German depending on preference. Time zone coordination is handled up front.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn">What do you need from me to get started? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>For a website: your logo, content or content notes, and any design preferences. For infrastructure: SSH access to the target server and a description of what needs to run. We handle everything else and document it fully.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn">Can you maintain the site or server after delivery? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>Yes. Ongoing maintenance is available as a monthly arrangement. Business Site includes 3 months of support. Infrastructure deployments include full documentation so your team can manage independently if preferred.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn">What Linux distributions do you support? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>Ubuntu, Debian, and Raspbian are the primary environments. Most configurations work across any systemd-based Linux distribution. Non-systemd systems need a short scoping call first.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-btn">What is the iPaaS monitoring agent exactly? <span class="faq-plus">+</span></button>
+      <div class="faq-ans"><p>A lightweight monitoring daemon written in C that reads CPU temperature, RAM usage, and system load directly from the Linux kernel via /proc/ and /sys/. It logs every metric to a local SQLite database, fires real-time alerts via webhook (Slack, Teams, Discord), and automatically shuts down the system if temperature exceeds a critical threshold. Zero external dependencies — deploys in under 10 minutes via a single setup script.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="section" id="contact" style="padding-top:0;">
+  <span class="section-tag">Contact</span>
+  <h2 class="fade">Start a project.</h2>
+  <div class="contact-grid">
+    <div class="contact-info fade">
+      <h3>Tell us what you need.</h3>
+      <p>We will get back to you within one working day with a clear answer and a honest assessment of whether we are the right fit for your project.</p>
+      <div class="contact-details">
+        <div class="c-detail">
+          <div class="c-icon">✉</div>
+          <a href="mailto:stacknode.studio@gmail.com">stacknode.studio@gmail.com</a>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">⏱</div>
+          <span>Response within 24 hours</span>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">🌍</div>
+          <span>Remote — available worldwide</span>
+        </div>
+        <div class="c-detail">
+          <div class="c-icon">💬</div>
+          <span>English & German</span>
+        </div>
+      </div>
+    </div>
+    <div class="fade fade-delay-1">
+      <form id="contact-form" class="cf" action="https://formspree.io/f/meaogrqp" method="POST">
+        <div>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jan Müller" required>
+        </div>
+        <div>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="jan@company.com" required>
+        </div>
+        <div>
+          <label for="service">What do you need?</label>
+          <select id="service" name="service">
+            <option value="">Select a service</option>
+            <option value="starter-site">Website — Starter (€399)</option>
+            <option value="business-site">Website — Business (€899)</option>
+            <option value="infrastructure">Linux Infrastructure (€299)</option>
+            <option value="ipaas">iPaaS Monitoring Deployment (€199)</option>
+            <option value="consultation">Free 15-min consultation</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Brief description</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about your project — what you need and when you need it..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-blue btn-full">Send message →</button>
+      </form>
+      <div id="form-success" class="form-success">
+        <p>✓ Message received. We will get back to you within one working day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="name">Stack<em>node</em></div>
+      <div class="tagline">Construimus quod manet</div>
+    </div>
+    <div class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
+
+/* ── TOKENS ── */
+:root {
+  --bg:       #070707;
+  --bg2:      #0f0f0f;
+  --bg3:      #171717;
+  --border:   #1f1f1f;
+  --border2:  #2a2a2a;
+  --text:     #c8c8c8;
+  --muted:    #525252;
+  --accent:   #2563eb;
+  --accentH:  #1d4ed8;
+  --accentL:  #3b82f6;
+  --white:    #f0f0f0;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(7,7,7,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .95rem; font-weight: 500;
+  color: var(--white); text-decoration: none;
+  letter-spacing: -.3px;
+}
+.logo em { color: var(--accent); font-style: normal; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: .82rem; font-weight: 500;
+  transition: color .2s; letter-spacing: .01em;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-btn {
+  background: var(--accent) !important;
+  color: #fff !important;
+  padding: .5rem 1.1rem !important;
+  border-radius: 6px !important;
+  transition: background .2s !important;
+}
+.nav-btn:hover { background: var(--accentH) !important; color: #fff !important; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  max-width: 960px; margin: 0 auto;
+  padding: 9rem 2rem 7rem;
+  overflow: hidden;
+}
+/* subtle dot grid background */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, #1f1f1f 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: .35;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+
+.mono-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .72rem; color: var(--accentL);
+  margin-bottom: 1.5rem; display: inline-flex;
+  align-items: center; gap: .5rem; letter-spacing: .05em;
+}
+.mono-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-weight: 700; color: var(--white);
+  line-height: 1.08; letter-spacing: -.6px;
+  margin-bottom: 1.5rem; max-width: 720px;
+}
+.hero h1 .gradient {
+  background: linear-gradient(135deg, var(--white) 0%, var(--accentL) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  color: var(--muted); font-size: 1.05rem;
+  max-width: 500px; margin-bottom: .6rem;
+  line-height: 1.8;
+}
+.latin {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem;
+  color: var(--border2);
+  margin-bottom: 2.75rem;
+  letter-spacing: .08em;
+  display: flex; align-items: center; gap: .6rem;
+}
+.latin::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--border2);
+  display: inline-block;
+}
+.hero-btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  text-decoration: none;
+  font-size: .875rem; font-weight: 500;
+  padding: .7rem 1.4rem; border-radius: 6px;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
+  cursor: pointer; font-family: 'Inter', sans-serif;
+  border: none; line-height: 1;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-blue { background: var(--accent); color: #fff; }
+.btn-blue:hover { background: var(--accentH); }
+.btn-ghost {
+  border: 1px solid var(--border2);
+  color: var(--text); background: transparent;
+}
+.btn-ghost:hover { border-color: var(--muted); color: var(--white); }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ── MARQUEE ── */
+.trust {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; padding: 1rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.marquee-track {
+  display: flex; gap: 3rem;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap; width: max-content;
+}
+.trust-item {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .78rem; color: var(--muted);
+  font-weight: 500; letter-spacing: .02em;
+}
+.trust-item .dot { color: var(--accent); font-size: .6rem; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── SECTION BASE ── */
+.section {
+  max-width: 960px; margin: 0 auto;
+  padding: 6rem 2rem;
+}
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .68rem; color: var(--accent);
+  text-transform: uppercase; letter-spacing: .15em;
+  margin-bottom: .85rem; display: flex;
+  align-items: center; gap: .5rem;
+}
+.section-tag::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--accent);
+}
+.section h2 {
+  font-size: clamp(1.65rem, 3.5vw, 2.4rem);
+  font-weight: 700; color: var(--white);
+  letter-spacing: -.4px; margin-bottom: .75rem;
+  line-height: 1.2;
+}
+.section-sub {
+  color: var(--muted); max-width: 500px;
+  line-height: 1.8; margin-bottom: 3.5rem;
+  font-size: .93rem;
+}
+
+/* ── SERVICES GRID ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.s-card {
+  background: var(--bg2); padding: 2rem 1.75rem;
+  transition: background .25s;
+  position: relative;
+}
+.s-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width .3s ease;
+}
+.s-card:hover { background: var(--bg3); }
+.s-card:hover::after { width: 100%; }
+.s-icon {
+  width: 36px; height: 36px;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; margin-bottom: 1.1rem;
+}
+.s-card h3 {
+  font-size: .95rem; font-weight: 600;
+  color: var(--white); margin-bottom: .45rem;
+}
+.s-card p { font-size: .83rem; color: var(--muted); line-height: 1.7; }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-inner {
+  max-width: 960px; margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-size: 2.5rem; font-weight: 700;
+  color: var(--white); line-height: 1;
+  margin-bottom: .35rem;
+  font-variant-numeric: tabular-nums;
+}
+.stat-num .accent { color: var(--accent); }
+.stat-label { font-size: .78rem; color: var(--muted); line-height: 1.4; }
+
+/* ── PROCESS ── */
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.proc-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.75rem;
+  position: relative;
+}
+.proc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem; color: var(--accent);
+  font-weight: 500; margin-bottom: 1.1rem;
+  letter-spacing: .05em;
+}
+.proc-card h3 {
+  font-size: .9rem; font-weight: 600;
+  color: var(--white); margin-bottom: .45rem;
+}
+.proc-card p { font-size: .82rem; color: var(--muted); line-height: 1.7; }
+/* connector line between steps */
+.proc-card:not(:last-child)::after {
+  content: '';
+  position: absolute; top: 2.2rem; right: -1.5rem;
+  width: 1.5rem; height: 1px;
+  background: var(--border2);
+  z-index: 1;
+}
+
+/* ── PRICING ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.p-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 2rem; position: relative;
+  transition: border-color .2s;
+}
+.p-card:hover { border-color: var(--border2); }
+.p-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(37,99,235,.05) 0%, var(--bg2) 100%);
+}
+.p-badge {
+  position: absolute; top: -11px; left: 1.5rem;
+  background: var(--accent); color: #fff;
+  font-size: .62rem; font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  padding: .18rem .6rem; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: .08em;
+}
+.p-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: .6rem; display: block;
+}
+.p-price {
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--white); line-height: 1;
+  margin-bottom: .25rem;
+  letter-spacing: -.5px;
+}
+.p-price small {
+  font-size: .85rem; color: var(--muted);
+  font-weight: 400; letter-spacing: 0;
+}
+.p-desc {
+  font-size: .83rem; color: var(--muted);
+  margin-bottom: 1.5rem; line-height: 1.7;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.p-card ul { list-style: none; margin-bottom: 1.75rem; }
+.p-card ul li {
+  font-size: .82rem; color: var(--muted);
+  padding: .4rem 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: .6rem;
+}
+.p-card ul li:last-child { border-bottom: none; }
+.check { color: var(--accent); font-size: .7rem; flex-shrink: 0; margin-top: .15rem; }
+
+/* ── WORK SECTION ── */
+.work-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.w-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  transition: border-color .25s, transform .25s;
+}
+.w-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.w-preview {
+  width: 100%; height: 200px;
+  background: var(--bg3);
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+/* terminal mockup inside preview */
+.terminal-mock {
+  width: 85%; background: #0a0a0a;
+  border: 1px solid var(--border2);
+  border-radius: 6px; padding: .9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .62rem; color: #4ade80;
+  line-height: 1.8;
+}
+.terminal-mock .t-bar {
+  display: flex; gap: .35rem;
+  margin-bottom: .75rem;
+}
+.terminal-mock .t-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.t-red { background: #ef4444; }
+.t-yellow { background: #eab308; }
+.t-green { background: #22c55e; }
+.terminal-mock .t-line { color: #6b7280; }
+.terminal-mock .t-line span { color: #4ade80; }
+.terminal-mock .t-dim { color: #374151; }
+
+.browser-mock {
+  width: 85%; background: #0d0d0d;
+  border: 1px solid var(--border2);
+  border-radius: 6px; overflow: hidden;
+}
+.browser-bar {
+  background: #1a1a1a; padding: .5rem .75rem;
+  display: flex; align-items: center; gap: .5rem;
+  border-bottom: 1px solid var(--border);
+}
+.b-dots { display: flex; gap: .3rem; }
+.b-dot { width: 7px; height: 7px; border-radius: 50%; }
+.b-red { background: #ef4444; }
+.b-yellow { background: #eab308; }
+.b-green { background: #22c55e; }
+.b-url {
+  flex: 1; background: #111;
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: .25rem .6rem;
+  font-size: .55rem; color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.browser-content {
+  padding: .75rem; display: flex;
+  flex-direction: column; gap: .4rem;
+}
+.b-hero-block {
+  height: 40px; background: var(--border);
+  border-radius: 4px;
+}
+.b-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; }
+.b-block {
+  height: 24px; background: var(--border);
+  border-radius: 3px; opacity: .6;
+}
+
+.w-body { padding: 1.5rem; }
+.w-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .63rem; color: var(--accent);
+  text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: .5rem; display: block;
+}
+.w-card h3 {
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); margin-bottom: .4rem;
+}
+.w-card p {
+  font-size: .83rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: 1rem;
+}
+.w-tech {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+  margin-bottom: 1rem;
+}
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .62rem; color: var(--muted);
+  background: var(--bg3); border: 1px solid var(--border);
+  padding: .2rem .5rem; border-radius: 4px;
+}
+.w-link {
+  font-size: .8rem; color: var(--accent);
+  text-decoration: none; font-weight: 500;
+  display: inline-flex; align-items: center; gap: .3rem;
+  transition: gap .2s;
+}
+.w-link:hover { gap: .5rem; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  margin: 0 2rem;
+  max-width: 960px;
+  margin-left: auto; margin-right: auto;
+  background: linear-gradient(135deg, rgba(37,99,235,.12) 0%, rgba(37,99,235,.04) 100%);
+  border: 1px solid rgba(37,99,235,.25);
+  border-radius: 12px; padding: 3.5rem;
+  text-align: center; position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(37,99,235,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-banner h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700; color: var(--white);
+  margin-bottom: .75rem; letter-spacing: -.3px;
+}
+.cta-banner p {
+  color: var(--muted); font-size: .93rem;
+  max-width: 440px; margin: 0 auto 2rem;
+  line-height: 1.75;
+}
+.cta-btns { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid; grid-template-columns: 1.1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.about-text p {
+  font-size: .93rem; color: var(--muted);
+  line-height: 1.85; margin-bottom: 1rem;
+}
+.about-text p:last-of-type { margin-bottom: 1.75rem; }
+.about-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.75rem; }
+.about-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .65rem; color: var(--muted);
+  background: var(--bg3); border: 1px solid var(--border);
+  padding: .25rem .6rem; border-radius: 4px;
+}
+.founder-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 2rem;
+}
+.founder-avatar {
+  width: 64px; height: 64px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 50%; margin-bottom: 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+}
+.founder-name {
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); margin-bottom: .2rem;
+}
+.founder-role {
+  font-size: .78rem; color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 1rem;
+}
+.founder-bio {
+  font-size: .83rem; color: var(--muted);
+  line-height: 1.7; margin-bottom: 1.25rem;
+}
+.founder-stack {
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+
+/* ── FAQ ── */
+.faq-list { border-top: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-btn {
+  width: 100%; background: none; border: none;
+  color: var(--text); font-family: 'Inter', sans-serif;
+  font-size: .9rem; font-weight: 500; text-align: left;
+  padding: 1.15rem 0; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; transition: color .2s;
+}
+.faq-btn:hover { color: var(--white); }
+.faq-plus {
+  color: var(--accent); font-size: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  flex-shrink: 0; transition: transform .25s;
+  width: 20px; height: 20px;
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+.faq-item.open .faq-plus { transform: rotate(45deg); border-color: var(--accent); }
+.faq-ans {
+  max-height: 0; overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-ans { max-height: 220px; padding-bottom: 1.15rem; }
+.faq-ans p { font-size: .87rem; color: var(--muted); line-height: 1.8; }
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.3fr;
+  gap: 4rem; align-items: start;
+}
+.contact-info h3 {
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--white); margin-bottom: .75rem;
+}
+.contact-info p {
+  font-size: .9rem; color: var(--muted);
+  line-height: 1.8; margin-bottom: 2rem;
+}
+.contact-details { display: flex; flex-direction: column; gap: .75rem; }
+.c-detail {
+  display: flex; align-items: center; gap: .75rem;
+  font-size: .85rem; color: var(--muted);
+}
+.c-icon {
+  width: 32px; height: 32px;
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; display: flex; align-items: center;
+  justify-content: center; font-size: .8rem; flex-shrink: 0;
+}
+.c-detail a { color: var(--text); text-decoration: none; transition: color .2s; }
+.c-detail a:hover { color: var(--accent); }
+
+/* ── FORM ── */
+.cf { display: flex; flex-direction: column; gap: 1rem; }
+.cf label {
+  font-size: .75rem; color: var(--muted);
+  font-weight: 500; display: block;
+  margin-bottom: .35rem; letter-spacing: .02em;
+}
+.cf input, .cf textarea, .cf select {
+  width: 100%; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--white); font-family: 'Inter', sans-serif;
+  font-size: .875rem; padding: .75rem 1rem;
+  transition: border-color .2s, background .2s;
+}
+.cf input:focus, .cf textarea:focus, .cf select:focus {
+  outline: none; border-color: var(--accent);
+  background: var(--bg3);
+}
+.cf textarea { resize: vertical; min-height: 120px; }
+.cf select option { background: var(--bg2); color: var(--white); }
+.form-success {
+  display: none;
+  background: rgba(37,99,235,.08);
+  border: 1px solid rgba(37,99,235,.3);
+  border-radius: 8px; padding: 2rem;
+  text-align: center;
+}
+.form-success p { color: var(--white); font-size: .9rem; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+}
+.foot-inner {
+  max-width: 960px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.foot-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .7rem; color: var(--muted);
+  display: flex; flex-direction: column; gap: .3rem;
+}
+.foot-brand .name em { color: var(--accent); font-style: normal; }
+.foot-brand .tagline { color: var(--border2); font-size: .65rem; letter-spacing: .05em; }
+.foot-links { display: flex; gap: 1.75rem; }
+.foot-links a {
+  font-size: .78rem; color: var(--muted);
+  text-decoration: none; transition: color .2s;
+}
+.foot-links a:hover { color: var(--text); }
+
+/* ── DIVIDER ── */
+.divider {
+  max-width: 960px; margin: 0 auto;
+  border: none; border-top: 1px solid var(--border);
+}
+
+/* ── FADE ANIMATIONS ── */
+.fade {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .6s cubic-bezier(.25,.46,.45,.94),
+              transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.fade.visible { opacity: 1; transform: translateY(0); }
+.fade-delay-1 { transition-delay: .1s; }
+.fade-delay-2 { transition-delay: .2s; }
+.fade-delay-3 { transition-delay: .3s; }
+
+/* ── COUNTER ANIMATION ── */
+.stat-num { transition: color .3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .proc-card::after { display: none; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  nav { padding: .9rem 1.25rem; }
+  .nav-links a:not(.nav-btn) { display: none; }
+  .hero { padding: 5.5rem 1.25rem 4rem; }
+  .section { padding: 4rem 1.25rem; }
+  .cta-banner { padding: 2.5rem 1.5rem; margin: 0 1.25rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .fade { opacity: 1; transform: none; transition: none; }
+  .btn:hover { transform: none; }
+}
+
+// ── SCROLL FADE ──
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      fadeObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => fadeObserver.observe(el));
+
+// ── COUNTER ANIMATION ──
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const isDecimal = el.dataset.decimal === 'true';
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // ease out cubic
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = (isDecimal ? current.toFixed(1) : Math.floor(current)) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── FORM AJAX SUBMIT ──
+const form = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+if (form && success) {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = 'Try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  });
+}
