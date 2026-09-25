@@ -1,4 +1,4 @@
-// ── SCROLL FADE ──
+// ── SCROLL FADE ── 
 const fadeObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
