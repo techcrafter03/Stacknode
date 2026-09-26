@@ -37,26 +37,20 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-latin">
-        <div class="latin-main">Construimus<br>quod manet.</div>
-        <div class="latin-translation">We build what endures.</div>
+      <div class="latin-line">
+        <span class="latin-main">Construimus quod manet.</span>
+        <span class="latin-sub">We build what endures.</span>
       </div>
       <div class="hero-terminal">
         <div class="t-bar">
-          <div class="t-dot t-red"></div>
-          <div class="t-dot t-yellow"></div>
-          <div class="t-dot t-green"></div>
-          <span class="t-title">monitor.sh</span>
+          <div class="t-dots">
+            <div class="t-dot t-red"></div>
+            <div class="t-dot t-yellow"></div>
+            <div class="t-dot t-green"></div>
+          </div>
+          <span class="t-title">stacknode ~ monitor</span>
         </div>
-        <div class="t-body">
-          <div class="t-line"><span class="t-prompt">$</span> ./setup.sh</div>
-          <div class="t-line t-success">[OK] C engine compiled</div>
-          <div class="t-line t-success">[OK] systemd timer active</div>
-          <div class="t-line t-success">[OK] SQLite initialised</div>
-          <div class="t-line t-success">[OK] Webhook configured</div>
-          <div class="t-line t-muted">Monitoring /proc/thermal...</div>
-          <div class="t-line t-pulse">CPU: 42C  RAM: 34%  OK</div>
-        </div>
+        <div class="t-body" id="terminal-body"></div>
       </div>
     </div>
   </div>
@@ -68,80 +62,80 @@
     <div class="trust-item"><span class="dot">*</span> Fast delivery</div>
     <div class="trust-item"><span class="dot">*</span> No lock-in contracts</div>
     <div class="trust-item"><span class="dot">*</span> Remote, worldwide</div>
-    <div class="trust-item"><span class="dot">*</span> English and German</div>
     <div class="trust-item"><span class="dot">*</span> Fixed pricing</div>
     <div class="trust-item"><span class="dot">*</span> Linux native</div>
     <div class="trust-item"><span class="dot">*</span> Response within 24h</div>
     <div class="trust-item"><span class="dot">*</span> Creativity and authenticity</div>
+    <div class="trust-item"><span class="dot">*</span> Open source</div>
     <div class="trust-item"><span class="dot">*</span> Fast delivery</div>
     <div class="trust-item"><span class="dot">*</span> No lock-in contracts</div>
     <div class="trust-item"><span class="dot">*</span> Remote, worldwide</div>
-    <div class="trust-item"><span class="dot">*</span> English and German</div>
     <div class="trust-item"><span class="dot">*</span> Fixed pricing</div>
     <div class="trust-item"><span class="dot">*</span> Linux native</div>
     <div class="trust-item"><span class="dot">*</span> Response within 24h</div>
     <div class="trust-item"><span class="dot">*</span> Creativity and authenticity</div>
+    <div class="trust-item"><span class="dot">*</span> Open source</div>
   </div>
 </div>
 
 <!-- SERVICES -->
 <section class="section" id="services">
-  <span class="section-tag">Services</span>
+  <span class="section-label">Services</span>
   <h2 class="fade">Two disciplines.<br>One studio.</h2>
   <p class="section-sub fade">Most agencies handle web or infrastructure. We cover both, because your frontend and your server have to work together.</p>
   <div class="services-grid fade">
     <div class="s-card" data-modal="web-dev" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>
       </div>
       <h3>Website Development</h3>
       <p>Stop losing customers to competitors with better-looking sites. Fast, mobile-ready websites built to convert visitors into clients.</p>
-      <span class="s-more">Learn more</span>
+      <span class="s-more">Learn more +</span>
     </div>
     <div class="s-card" data-modal="repair" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       </div>
       <h3>Repair and Redesign</h3>
       <p>Every second your site takes to load, customers leave. We strip the bloat and rebuild it to convert traffic instead of losing it.</p>
-      <span class="s-more">Learn more</span>
+      <span class="s-more">Learn more +</span>
     </div>
     <div class="s-card" data-modal="linux" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
       <h3>Linux Server Setup</h3>
-      <p>Your server going down at 3am is not your problem anymore. Hardened Linux servers that stay up, stay secure, without babysitting.</p>
-      <span class="s-more">Learn more</span>
+      <p>Your server going down at 3am should not be your problem. Hardened Linux servers that stay up and stay secure without babysitting.</p>
+      <span class="s-more">Learn more +</span>
     </div>
     <div class="s-card" data-modal="monitoring" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
       <h3>Infrastructure Monitoring</h3>
       <p>Know before it breaks. Real-time alerts the moment something goes wrong, before downtime hits your revenue or your clients notice.</p>
-      <span class="s-more">Learn more</span>
+      <span class="s-more">Learn more +</span>
     </div>
     <div class="s-card" data-modal="vpn" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       </div>
       <h3>VPN and Network Security</h3>
       <p>Business data travelling unencrypted is a liability. Private encrypted networks your team trusts from anywhere in the world.</p>
-      <span class="s-more">Learn more</span>
+      <span class="s-more">Learn more +</span>
     </div>
     <div class="s-card" data-modal="proxmox" tabindex="0">
       <div class="s-icon-wrap">
-        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="8" height="8"/><rect x="14" y="2" width="8" height="8"/><rect x="2" y="14" width="8" height="8"/><rect x="14" y="14" width="8" height="8"/></svg>
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="2" width="8" height="8"/><rect x="14" y="2" width="8" height="8"/><rect x="2" y="14" width="8" height="8"/><rect x="14" y="14" width="8" height="8"/></svg>
       </div>
       <h3>Proxmox and Virtual Labs</h3>
       <p>Test updates and new software without touching live systems. Isolated environments that protect your production infrastructure.</p>
-      <span class="s-more">Learn more</span>
+      <span class="s-more">Learn more +</span>
     </div>
   </div>
 </section>
 
-<!-- MODAL OVERLAYS -->
+<!-- MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal" id="modal-box">
     <button class="modal-close" id="modal-close">&#x2715;</button>
@@ -173,7 +167,7 @@
 
 <!-- PROCESS -->
 <section class="section" id="process">
-  <span class="section-tag">How we work</span>
+  <span class="section-label">How we work</span>
   <h2 class="fade">Simple. Transparent.<br>No surprises.</h2>
   <p class="section-sub fade">Four steps from first message to delivered project.</p>
   <div class="process-grid">
@@ -202,13 +196,13 @@
 
 <!-- PRICING -->
 <section class="section" id="pricing" style="padding-top:0;">
-  <span class="section-tag">Pricing</span>
+  <span class="section-label">Pricing</span>
   <h2 class="fade">Clear pricing.<br>No hourly surprises.</h2>
   <p class="section-sub fade">Fixed project rates. You know the number before we start.</p>
   <div class="pricing-grid">
     <div class="p-card fade">
       <span class="p-label">Web — Starter</span>
-      <div class="p-price">399 <small>EUR one-time</small></div>
+      <div class="p-price">€399 <small>one-time</small></div>
       <p class="p-desc">A clean, professional website that makes your business look credible and converts visitors into enquiries.</p>
       <ul>
         <li><span class="check">+</span> Customers can find and contact you easily</li>
@@ -222,12 +216,12 @@
     <div class="p-card featured fade fade-delay-1">
       <div class="p-badge">Most popular</div>
       <span class="p-label">Web — Business</span>
-      <div class="p-price">899 <small>EUR one-time</small></div>
+      <div class="p-price">€899 <small>one-time</small></div>
       <p class="p-desc">A full business website built to grow with you, with everything configured to bring in clients consistently.</p>
       <ul>
         <li><span class="check">+</span> Presents your business as an authority</li>
         <li><span class="check">+</span> Custom design that stands out from competitors</li>
-        <li><span class="check">+</span> Content management so you can update it yourself</li>
+        <li><span class="check">+</span> Content management so you update it yourself</li>
         <li><span class="check">+</span> SEO foundation that grows over time</li>
         <li><span class="check">+</span> 3 months support after launch</li>
       </ul>
@@ -235,7 +229,7 @@
     </div>
     <div class="p-card fade">
       <span class="p-label">Infrastructure</span>
-      <div class="p-price">299 <small>EUR per setup</small></div>
+      <div class="p-price">€299 <small>per setup</small></div>
       <p class="p-desc">Your servers hardened, monitored, and documented. You focus on the business, not the infrastructure.</p>
       <ul>
         <li><span class="check">+</span> Server stays up when you are asleep</li>
@@ -248,7 +242,7 @@
     </div>
     <div class="p-card fade fade-delay-1">
       <span class="p-label">iPaaS Monitoring</span>
-      <div class="p-price">199 <small>EUR per deployment</small></div>
+      <div class="p-price">€199 <small>per deployment</small></div>
       <p class="p-desc">Deploy our open-source Linux monitoring agent on your server. Know the moment something goes wrong, before your clients do.</p>
       <ul>
         <li><span class="check">+</span> Real-time alerts to Slack, Teams, or Discord</li>
@@ -263,24 +257,26 @@
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner fade">
-  <h2>Free 30-minute consultation.</h2>
-  <p>Not sure what you need or whether we are the right fit? Send your website link or server details and we will run a quick audit. No pitch, no pressure, just a straight conversation.</p>
-  <div class="cta-btns">
-    <a href="mailto:stacknode.studio@gmail.com?subject=Free Consultation Request" class="btn btn-blue">Book a free call</a>
-    <a href="#pricing" class="btn btn-ghost">See pricing first</a>
+<div class="cta-wrap">
+  <div class="cta-banner fade">
+    <h2>Free 30-minute consultation.</h2>
+    <p>Not sure what you need or whether we are the right fit? Send your website link or server details and we will run a quick audit. No pitch, no pressure, just a straight conversation.</p>
+    <div class="cta-btns">
+      <a href="mailto:stacknode.studio@gmail.com?subject=Free Consultation Request" class="btn btn-blue">Book a free call</a>
+      <a href="#pricing" class="btn btn-ghost">See pricing first</a>
+    </div>
   </div>
 </div>
 
 <!-- ABOUT -->
 <section class="section" id="about">
-  <span class="section-tag">About</span>
+  <span class="section-label">About</span>
   <h2 class="fade">Built by someone who<br>actually uses Linux.</h2>
   <div class="about-grid">
     <div class="about-text fade">
       <p>Stacknode is run by Yash Kale, a self-taught developer from Maharashtra, India. Since 2022, building Linux systems, configuring servers, writing Bash scripts, and developing web projects from scratch has been the daily work.</p>
       <p>The iPaaS Edge Monitoring Hub, a kernel-native C monitoring agent with zero external dependencies, is what Stacknode is built on. Not a tutorial project. A deployed, documented, open-source tool that runs on real hardware.</p>
-      <p>The studio works with small businesses and technical teams who want real infrastructure work done without enterprise pricing. English and German both work.</p>
+      <p><span class="highlight">The studio works with small businesses and technical teams who want real infrastructure work done without enterprise pricing.</span> Available worldwide, in English.</p>
       <div class="about-tags">
         <span class="about-tag">C / POSIX</span>
         <span class="about-tag">Bash</span>
@@ -302,11 +298,11 @@
       <div class="founder-name">Yash Kale</div>
       <div class="founder-role">Founder and Developer</div>
       <p class="founder-bio">Self-taught since 2022. Built a production-ready Linux monitoring agent in C, reading directly from the kernel with zero external dependencies. Stacknode exists because infrastructure should just work, and websites should actually sell.</p>
-      <p class="founder-bio">Available in English and German. Based in India, working remotely worldwide.</p>
+      <p class="founder-bio">Available worldwide in English. Based in India, working remotely.</p>
       <div class="founder-stack">
         <span class="tech-tag">Maharashtra, India</span>
         <span class="tech-tag">Remote worldwide</span>
-        <span class="tech-tag">EN and DE</span>
+        <span class="tech-tag">English</span>
       </div>
     </div>
   </div>
@@ -315,7 +311,7 @@
 <!-- FAQ -->
 <hr class="divider">
 <section class="section" id="faq" style="padding-top:4rem;">
-  <span class="section-tag">FAQ</span>
+  <span class="section-label">FAQ</span>
   <h2 class="fade">Common questions.</h2>
   <p class="section-sub fade" style="margin-bottom:2rem;">If something is not here, just ask directly.</p>
   <div class="faq-list fade">
@@ -325,7 +321,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-btn">Do you work with clients outside India? <span class="faq-plus">+</span></button>
-      <div class="faq-ans"><p>Yes. All projects are handled remotely. We work with clients across Europe, the US, and India. Communication in English or German depending on preference. Time zone coordination handled upfront.</p></div>
+      <div class="faq-ans"><p>Yes. All projects are handled remotely. We work with clients across Europe, the US, and India. Communication in English. Time zone coordination handled upfront.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-btn">What do you need from me to get started? <span class="faq-plus">+</span></button>
@@ -340,7 +336,7 @@
       <div class="faq-ans"><p>Ubuntu, Debian, and Raspbian are the primary environments. Most configurations work across any systemd-based Linux distribution. Non-systemd systems need a short scoping call first.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-btn">What is the iPaaS monitoring agent exactly? <span class="faq-plus">+</span></button>
+      <button class="faq-btn">What is the iPaaS monitoring agent? <span class="faq-plus">+</span></button>
       <div class="faq-ans"><p>A lightweight monitoring daemon written in C that reads CPU temperature, RAM usage, and system load directly from the Linux kernel via /proc/ and /sys/. Logs every metric to a local SQLite database, fires real-time alerts via webhook, and automatically shuts down if temperature exceeds a critical threshold. Zero external dependencies. Deploys in under 10 minutes via a single setup script.</p></div>
     </div>
   </div>
@@ -348,7 +344,7 @@
 
 <!-- CONTACT -->
 <section class="section" id="contact" style="padding-top:0;">
-  <span class="section-tag">Contact</span>
+  <span class="section-label">Contact</span>
   <h2 class="fade">Start a project.</h2>
   <div class="contact-grid">
     <div class="contact-info fade">
@@ -367,30 +363,26 @@
           <div class="c-icon">W</div>
           <span>Remote, available worldwide</span>
         </div>
-        <div class="c-detail">
-          <div class="c-icon">L</div>
-          <span>English and German</span>
-        </div>
       </div>
     </div>
     <div class="fade fade-delay-1">
       <form id="contact-form" class="cf" action="https://formspree.io/f/meaogrqp" method="POST">
         <div>
           <label for="name">Your name</label>
-          <input type="text" id="name" name="name" placeholder="Jan Müller" required>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
         <div>
           <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="jan@company.com" required>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
         </div>
         <div>
           <label for="service">What do you need?</label>
           <select id="service" name="service">
             <option value="">Select a service</option>
-            <option value="starter-site">Website Starter (399 EUR)</option>
-            <option value="business-site">Website Business (899 EUR)</option>
-            <option value="infrastructure">Linux Infrastructure (299 EUR)</option>
-            <option value="ipaas">iPaaS Monitoring (199 EUR)</option>
+            <option value="starter-site">Website Starter (€399)</option>
+            <option value="business-site">Website Business (€899)</option>
+            <option value="infrastructure">Linux Infrastructure (€299)</option>
+            <option value="ipaas">iPaaS Monitoring (€199)</option>
             <option value="consultation">Free 30-min consultation</option>
             <option value="other">Something else</option>
           </select>
