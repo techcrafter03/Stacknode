@@ -24,6 +24,18 @@
   </div>
 </nav>
 
+<!-- LATIN BRAND STATEMENT -->
+<div class="latin-header">
+  <div class="latin-inner">
+    <div class="latin-line-left"></div>
+    <div class="latin-center">
+      <span class="latin-main">Construimus quod manet.</span>
+      <span class="latin-sub">We build what endures.</span>
+    </div>
+    <div class="latin-line-right"></div>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-content">
@@ -37,10 +49,6 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="latin-line">
-        <span class="latin-main">Construimus quod manet.</span>
-        <span class="latin-sub">We build what endures.</span>
-      </div>
       <div class="hero-terminal">
         <div class="t-bar">
           <div class="t-dots">
@@ -156,7 +164,7 @@
     </div>
     <div class="stat-item fade fade-delay-2">
       <div class="stat-num"><span data-target="10">0</span></div>
-      <div class="stat-label">Minutes to deploy our monitoring agent</div>
+      <div class="stat-label">Minutes to deploy the monitoring agent</div>
     </div>
     <div class="stat-item fade fade-delay-3">
       <div class="stat-num"><span data-target="0">0</span></div>
@@ -199,10 +207,14 @@
   <span class="section-label">Pricing</span>
   <h2 class="fade">Clear pricing.<br>No hourly surprises.</h2>
   <p class="section-sub fade">Fixed project rates. You know the number before we start.</p>
+  <div class="currency-toggle fade">
+    <button class="cur-btn active" data-cur="eur">EUR</button>
+    <button class="cur-btn" data-cur="usd">USD</button>
+  </div>
   <div class="pricing-grid">
     <div class="p-card fade">
       <span class="p-label">Web — Starter</span>
-      <div class="p-price">€399 <small>one-time</small></div>
+      <div class="p-price"><span data-price="starter">€399</span> <small>one-time</small></div>
       <p class="p-desc">A clean, professional website that makes your business look credible and converts visitors into enquiries.</p>
       <ul>
         <li><span class="check">+</span> Customers can find and contact you easily</li>
@@ -216,7 +228,7 @@
     <div class="p-card featured fade fade-delay-1">
       <div class="p-badge">Most popular</div>
       <span class="p-label">Web — Business</span>
-      <div class="p-price">€899 <small>one-time</small></div>
+      <div class="p-price"><span data-price="business">€899</span> <small>one-time</small></div>
       <p class="p-desc">A full business website built to grow with you, with everything configured to bring in clients consistently.</p>
       <ul>
         <li><span class="check">+</span> Presents your business as an authority</li>
@@ -229,7 +241,7 @@
     </div>
     <div class="p-card fade">
       <span class="p-label">Infrastructure</span>
-      <div class="p-price">€299 <small>per setup</small></div>
+      <div class="p-price"><span data-price="infra">€299</span> <small>per setup</small></div>
       <p class="p-desc">Your servers hardened, monitored, and documented. You focus on the business, not the infrastructure.</p>
       <ul>
         <li><span class="check">+</span> Server stays up when you are asleep</li>
@@ -242,7 +254,7 @@
     </div>
     <div class="p-card fade fade-delay-1">
       <span class="p-label">iPaaS Monitoring</span>
-      <div class="p-price">€199 <small>per deployment</small></div>
+      <div class="p-price"><span data-price="ipaas">€199</span> <small>per deployment</small></div>
       <p class="p-desc">Deploy our open-source Linux monitoring agent on your server. Know the moment something goes wrong, before your clients do.</p>
       <ul>
         <li><span class="check">+</span> Real-time alerts to Slack, Teams, or Discord</li>
@@ -292,7 +304,7 @@
       <a href="#contact" class="btn btn-ghost">Work with us</a>
     </div>
     <div class="founder-card fade fade-delay-1">
-      <div class="founder-avatar" id="founder-avatar">
+      <div class="founder-avatar">
         <img src="yash.jpg" alt="Yash Kale" onerror="this.parentElement.innerHTML='YK'" style="width:64px;height:64px;border-radius:50%;object-fit:cover;">
       </div>
       <div class="founder-name">Yash Kale</div>
