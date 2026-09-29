@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Work | Stacknode</title>
+<meta name="description" content="Stacknode projects: a dependency-free Linux monitoring agent in C, a Raspberry Pi WireGuard VPN, and a Proxmox home lab.">
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html">Stack<em>node</em></a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#pricing">Pricing</a>
+    <a href="work.html">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact" class="nav-btn">Start a project</a>
+  </div>
+</nav>
+
+<main class="section">
+  <span class="section-label">Work</span>
+  <h2>Built, documented, open to inspect.</h2>
+  <p class="section-sub">Stacknode is new, so there are no client case studies yet. These are the projects behind the studio. Client work will be added here, with permission, as it is delivered.</p>
+
+  <div class="pricing-grid" style="grid-template-columns:1fr">
+
+    <div class="p-card featured">
+      <span class="p-badge">Live</span>
+      <span class="p-label">Monitoring / C / Bash / SQLite</span>
+      <div class="p-price" style="font-size:1.5rem">iPaaS Edge Monitoring Hub</div>
+      <p class="p-desc">A Linux monitoring agent written in C. It reads CPU temperature, RAM and load straight from the kernel, logs every metric to SQLite, alerts your team by webhook, and can shut a machine down before heat damages it. No external dependencies, one setup script.</p>
+      <ul>
+        <li><span class="check">+</span>Reads /proc and /sys through POSIX calls, no agent framework</li>
+        <li><span class="check">+</span>Full audit trail: every metric and alert stored with a timestamp</li>
+        <li><span class="check">+</span>Webhook alerts (Discord live; Slack and Teams in development)</li>
+        <li><span class="check">+</span>Optional protective shutdown at a critical temperature</li>
+        <li><span class="check">+</span>Deployed in under 10 minutes, runs from a systemd timer every 5 minutes</li>
+      </ul>
+      <div class="hero-btns">
+        <a class="btn btn-blue" href="https://github.com/techcrafter03/ipass-edge-hub">View source</a>
+        <a class="btn btn-ghost" href="https://youtu.be/Xi6Ed8yoJnc">Watch the demo</a>
+      </div>
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge" style="background:var(--bg3);color:var(--text);border:1px solid var(--border2)">Built</span>
+      <span class="p-label">Network security / WireGuard / Raspberry Pi</span>
+      <div class="p-price" style="font-size:1.5rem">Private VPN on a Raspberry Pi</div>
+      <p class="p-desc">A self-hosted WireGuard VPN running on a Raspberry Pi 3 (PiVPN), so devices can reach a private network over an encrypted tunnel from anywhere.</p>
+      <ul>
+        <li><span class="check">+</span>WireGuard server with per-device keys</li>
+        <li><span class="check">+</span>Runs on low-power hardware, always on</li>
+        <li><span class="check">+</span>Same setup pattern applies to a small office or remote team</li>
+      </ul>
+    </div>
+
+    <div class="p-card">
+      <span class="p-badge" style="background:var(--bg3);color:var(--text);border:1px solid var(--border2)">In progress</span>
+      <span class="p-label">Virtualization / Proxmox</span>
+      <div class="p-price" style="font-size:1.5rem">Proxmox home lab</div>
+      <p class="p-desc">A Proxmox VE lab on a spare laptop for testing updates, hardening steps and monitoring rollouts on isolated virtual machines before anything touches a live system. This project is being built now and will be documented here when it is running.</p>
+    </div>
+
+  </div>
+
+  <div class="cta-banner" style="margin-top:3rem">
+    <h2>Want this on your servers?</h2>
+    <p>Send your server details or website link and get a straight answer within one working day.</p>
+    <div class="cta-btns"><a class="btn btn-blue" href="index.html#contact">Start a project</a><a class="btn btn-ghost" href="index.html#pricing">See pricing</a></div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="name">Stack<em>node</em></span><span class="tagline">Construimus quod manet</span></div>
+    <div class="foot-links">
+      <a href="index.html#services">Services</a><a href="index.html#pricing">Pricing</a><a href="work.html">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a href="impressum.html">Impressum</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
