@@ -1,11 +1,11 @@
 // ── CURRENCY TOGGLE ──
 const prices = {
-  eur: { starter: '€399', business: '€899', infra: '€299', ipaas: '€199' },
-  usd: { starter: '$439', business: '$989', infra: '$329', ipaas: '$219' }
+  eur: { starter: '€599', business: '€1,290', infra: '€399', ipaas: '€199', care: '€99', care2: '€199', extra: '€149' },
+  usd: { starter: '$649', business: '$1,399', infra: '$439', ipaas: '$219', care: '$109', care2: '$219', extra: '$159' }
 };
 const selectLabels = {
-  eur: ['Website Starter (€399)', 'Website Business (€899)', 'Linux Infrastructure (€299)', 'iPaaS Monitoring (€199)'],
-  usd: ['Website Starter ($439)', 'Website Business ($989)', 'Linux Infrastructure ($329)', 'iPaaS Monitoring ($219)']
+  eur: ['Website Starter (€599)', 'Website Business (€1,290)', 'Linux Setup (€399 per server)', 'iPaaS Monitoring (€199)'],
+  usd: ['Website Starter ($649)', 'Website Business ($1,399)', 'Linux Setup ($439 per server)', 'iPaaS Monitoring ($219)']
 };
 let currentCurrency = 'eur';
 
@@ -56,7 +56,7 @@ const phase2Fns = [
   () => `[${ts()}]  LOAD ${(Math.random() * 0.8 + 0.1).toFixed(2)}   DISK ${ri(12, 38)}%   OK`,
   () => `[${ts()}]  CPU ${ri(38, 55)}C   RAM ${ri(28, 45)}%   OK`,
   () => `[${ts()}]  ALERT: CPU spike 78C  [WARN]`,
-  () => `[${ts()}]  Webhook fired → Slack notified`,
+  () => `[${ts()}]  Webhook fired → Discord notified`,
   () => `[${ts()}]  CPU ${ri(42, 52)}C   cooldown OK`,
   () => `[${ts()}]  CPU ${ri(38, 48)}C   RAM ${ri(28, 45)}%   OK`,
 ];
@@ -154,13 +154,13 @@ const modals = {
     tag: 'Linux Infrastructure', title: 'Linux Server Setup',
     problem: 'A server going down at 3am should not be something you deal with personally.',
     outcome: 'A hardened Linux server that stays up, stays secure, without babysitting.',
-    includes: ['Ubuntu, Debian, or Raspbian provisioning', 'SSH key policies, root access locked down', 'Firewall configured with UFW or iptables', 'Automated backup scripts', 'Full handover documentation', 'Completed in 3 to 5 working days']
+    includes: ['Ubuntu, Debian, or Raspbian provisioning', 'SSH key policies, root access locked down', 'Firewall configured with UFW or iptables', 'Automated backup scripts', 'Full handover documentation', 'Optional monthly care plan for ongoing maintenance', 'Completed in 3 to 5 working days']
   },
   'monitoring': {
     tag: 'iPaaS Monitoring', title: 'Infrastructure Monitoring',
     problem: 'You find out your server is down when a client tells you, not before.',
     outcome: 'Real-time alerts the moment something goes wrong, before downtime hits your clients.',
-    includes: ['C agent reads directly from Linux kernel', 'CPU temp, RAM, and load monitored', 'Alerts to Slack, Teams, or Discord', 'Full SQLite audit trail stored locally', 'Auto-shutdown if temp exceeds threshold', 'Deployed in under 10 minutes']
+    includes: ['C agent reads directly from Linux kernel', 'CPU temp, RAM, and load monitored', 'Real-time webhook alerts (Discord live, Slack and Teams in development)', 'Full SQLite audit trail stored locally', 'Optional protective shutdown at a critical temperature', 'Best suited to physical servers and edge devices', 'Deployed in under 10 minutes']
   },
   'vpn': {
     tag: 'Network Security', title: 'VPN and Network Security',
