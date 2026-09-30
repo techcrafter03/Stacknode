@@ -153,20 +153,20 @@ const modals = {
   'linux': {
     tag: 'Linux Infrastructure', title: 'Linux Server Setup',
     problem: 'A server going down at 3am should not be something you deal with personally.',
-    outcome: 'A hardened Linux server that stays up, stays secure, without babysitting.',
-    includes: ['Ubuntu, Debian, or Raspbian provisioning', 'SSH key policies, root access locked down', 'Firewall configured with UFW or iptables', 'Automated backup scripts', 'Full handover documentation', 'Optional monthly care plan for ongoing maintenance', 'Completed in 3 to 5 working days']
+    outcome: 'A hardened, documented Linux server that you can hand to anyone.',
+    includes: ['Ubuntu, Debian, or Raspberry Pi OS provisioning', 'SSH key policies, root access locked down', 'Firewall configured with UFW or iptables', 'Automated backup scripts', 'Full handover documentation', 'Optional monthly care plan for ongoing maintenance', 'Completed in 3 to 5 working days']
   },
   'monitoring': {
     tag: 'iPaaS Monitoring', title: 'Infrastructure Monitoring',
     problem: 'You find out your server is down when a client tells you, not before.',
-    outcome: 'Real-time alerts the moment something goes wrong, before downtime hits your clients.',
+    outcome: 'Alerts within minutes of a problem, so you can act before your clients call.',
     includes: ['C agent reads directly from Linux kernel', 'CPU temp, RAM, and load monitored', 'Real-time webhook alerts (Discord live, Slack and Teams in development)', 'Full SQLite audit trail stored locally', 'Optional protective shutdown at a critical temperature', 'Best suited to physical servers and edge devices', 'Deployed in under 10 minutes']
   },
   'vpn': {
     tag: 'Network Security', title: 'VPN and Network Security',
     problem: 'Your team is on public networks and business data is travelling unencrypted.',
     outcome: 'A private encrypted network your team trusts from anywhere.',
-    includes: ['WireGuard or OpenVPN configuration', 'Firewall rules and routing policies', 'Remote access for multiple team members', 'Server log monitoring configured', 'Full documentation and credentials handover']
+    includes: ['WireGuard VPN configuration', 'Firewall rules and routing policies', 'Remote access for multiple team members', 'Server log monitoring configured', 'Full documentation and credentials handover']
   },
   'proxmox': {
     tag: 'Virtualisation', title: 'Proxmox and Virtual Labs',
