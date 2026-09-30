@@ -15,7 +15,8 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">Stack<em>node</em></a>
-  <div class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="var o=this.parentNode.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰'">☰</button>
+  <div class="nav-links" onclick="this.parentNode.classList.remove('open');this.previousElementSibling.textContent='☰'">
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="work.html">Work</a>
