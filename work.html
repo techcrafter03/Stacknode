@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <title>Work | Stacknode</title>
-<meta name="description" content="Stacknode projects: a dependency-free Linux monitoring agent in C, a Raspberry Pi WireGuard VPN, and a Proxmox home lab.">
+<meta name="description" content="Stacknode projects: a Linux monitoring agent written in C, a Raspberry Pi WireGuard VPN, and a Proxmox home lab.">
 </head>
 <body>
 <nav>
@@ -25,7 +25,7 @@
 
 <main class="section">
   <span class="section-label">Work</span>
-  <h2>Built, documented, open to inspect.</h2>
+  <h2>Projects behind Stacknode.</h2>
   <p class="section-sub">Stacknode is new, so there are no client case studies yet. These are the projects behind the studio. Client work will be added here, with permission, as it is delivered.</p>
 
   <div class="pricing-grid" style="grid-template-columns:1fr">
@@ -34,7 +34,7 @@
       <span class="p-badge">Live</span>
       <span class="p-label">Monitoring / C / Bash / SQLite</span>
       <div class="p-price" style="font-size:1.5rem">iPaaS Edge Monitoring Hub</div>
-      <p class="p-desc">A Linux monitoring agent written in C. It reads CPU temperature, RAM and load straight from the kernel, logs every metric to SQLite, alerts your team by webhook, and can shut a machine down before heat damages it. No external dependencies, one setup script.</p>
+      <p class="p-desc">A Linux monitoring agent written in C. It reads CPU temperature, RAM and load straight from the kernel, logs every metric to SQLite, alerts your team by webhook, and can shut a machine down before heat damages it. The C engine needs no external libraries, and Bash, curl and SQLite handle the rest. One setup script installs it.</p>
       <ul>
         <li><span class="check">+</span>Reads /proc and /sys through POSIX calls, no agent framework</li>
         <li><span class="check">+</span>Full audit trail: every metric and alert stored with a timestamp</li>
@@ -54,7 +54,7 @@
       <p class="p-desc">A self-hosted WireGuard VPN running on a Raspberry Pi 3 (PiVPN), so devices can reach a private network over an encrypted tunnel from anywhere.</p>
       <ul>
         <li><span class="check">+</span>WireGuard server with per-device keys</li>
-        <li><span class="check">+</span>Runs on low-power hardware, always on</li>
+        <li><span class="check">+</span>Runs on a Raspberry Pi 3, low-power and always on</li>
         <li><span class="check">+</span>Same setup pattern applies to a small office or remote team</li>
       </ul>
     </div>
