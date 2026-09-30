@@ -160,7 +160,7 @@ const modals = {
     tag: 'iPaaS Monitoring', title: 'Infrastructure Monitoring',
     problem: 'You find out your server is down when a client tells you, not before.',
     outcome: 'Alerts within minutes of a problem, so you can act before your clients call.',
-    includes: ['C agent reads directly from Linux kernel', 'CPU temp, RAM, and load monitored', 'Real-time webhook alerts (Discord live, Slack and Teams in development)', 'Full SQLite audit trail stored locally', 'Optional protective shutdown at a critical temperature', 'Best suited to physical servers and edge devices', 'Deployed in under 10 minutes']
+    includes: ['C agent reads directly from Linux kernel', 'CPU temp, RAM, and load monitored', 'Webhook alerts, checked every 5 minutes (Discord live, Slack and Teams in development)', 'Full SQLite audit trail stored locally', 'Optional protective shutdown at a critical temperature', 'Best suited to physical servers and edge devices', 'Deployed in under 10 minutes']
   },
   'vpn': {
     tag: 'Network Security', title: 'VPN and Network Security',
