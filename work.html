@@ -31,23 +31,22 @@
 
   <div class="pricing-grid" style="grid-template-columns:1fr">
 
-    <div class="p-card featured">
-      <span class="p-badge">Live</span>
-      <span class="p-label">Monitoring / C / Bash / SQLite</span>
-      <div class="p-price" style="font-size:1.5rem">iPaaS Edge Monitoring Hub</div>
-      <p class="p-desc">A Linux monitoring agent written in C. It reads CPU temperature, RAM and load straight from the kernel, logs every metric to SQLite, alerts your team by webhook, and can shut a machine down before heat damages it. The C engine needs no external libraries, and Bash, curl and SQLite handle the rest. One setup script installs it.</p>
-      <ul>
-        <li><span class="check">+</span>Reads /proc and /sys through POSIX calls, no agent framework</li>
-        <li><span class="check">+</span>Full audit trail: every metric and alert stored with a timestamp</li>
-        <li><span class="check">+</span>Webhook alerts (Discord live; Slack and Teams in development)</li>
-        <li><span class="check">+</span>Optional protective shutdown at a critical temperature</li>
-        <li><span class="check">+</span>Deployed in under 10 minutes, runs from a systemd timer every 5 minutes</li>
-      </ul>
-      <div class="hero-btns">
-        <a class="btn btn-blue" href="https://github.com/techcrafter03/ipass-edge-hub">View source</a>
-      </div>
-    </div>
-
+   <div class="p-card featured">
+  <span class="p-badge">Live</span>
+  <span class="p-label">Security Monitoring / C / Bash / SQLite</span>
+  <div class="p-price" style="font-size:1.5rem">iPaaS Edge Monitoring Hub</div>
+  <p class="p-desc">A Linux security and health monitoring agent written in C and Bash. Ten checks watch for SSH brute-force attempts, unauthorized key changes, log tampering, privilege escalation, and more, each tested against real attack tools. Every result is logged to SQLite for a full audit trail, alerts go to Discord and Slack, and a built-in dashboard shows live status. One setup script installs it in under 10 minutes.</p>
+  <ul>
+    <li><span class="check">+</span>Ten attack-tested detection checks: SSH brute-force, key changes, log tampering, privilege escalation, firewall state, and more</li>
+    <li><span class="check">+</span>Full audit trail: every check, every run, logged to SQLite with timestamps</li>
+    <li><span class="check">+</span>Webhook alerts to Discord and Slack, both live and tested</li>
+    <li><span class="check">+</span>Built-in static dashboard with live status, no external monitoring platform needed</li>
+    <li><span class="check">+</span>Deployed in under 10 minutes, runs from a systemd timer every 5 minutes</li>
+  </ul>
+  <div class="hero-btns">
+    <a class="btn btn-blue" href="https://github.com/techcrafter03/ipass-edge-hub">View source</a>
+  </div>
+</div>
     <div class="p-card">
       <span class="p-badge" style="background:var(--bg3);color:var(--text);border:1px solid var(--border2)">Built</span>
       <span class="p-label">Network security / WireGuard / Raspberry Pi</span>
